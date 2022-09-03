@@ -10,14 +10,12 @@ import UIKit
 class GreenViewController: UIViewController {
     @IBOutlet private weak var sliderValueLabel: UILabel!
     @IBOutlet private weak var slider: UISlider!
-    private var sliderValue: Float = 0
-    
+
     @IBAction private func changeSliderValue(_ sender: Any) {
-        sliderValue = slider.value
-        sliderValueLabel.text = "\(sliderValue)"
+        sliderValueLabel.text = "\(slider.value)"
         
         if let delegate = UIApplication.shared.delegate as? AppDelegate {
-            delegate.sharedSliderValue = sliderValue
+            delegate.sharedSliderValue = slider.value
         }
     }
     
